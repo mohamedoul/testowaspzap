@@ -4,7 +4,7 @@ pipeline {
         stage('Setup') {
             steps {
                 script {
-                    startZap(host: "127.0.0.1", port: 8089,  zapHome: "/usr/local/bin/ZAP_2.7.0/", sessionPath:"var/lib/jenkins/workspace/test_owaspzap_pipeline/session.session", allowedHosts:['github.com']) // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used
+                    startZap(host: "127.0.0.1", port: 8089,  timeout: 900, zapHome: "/usr/local/bin/ZAP_2.7.0/", sessionPath:"var/lib/jenkins/workspace/test_owaspzap_pipeline/session.session", allowedHosts:['github.com']) // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used
                 }
             }
         }
